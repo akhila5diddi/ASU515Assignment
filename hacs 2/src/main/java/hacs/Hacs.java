@@ -11,7 +11,7 @@ package hacs;
  * Update to Java 8
  */
 
-public class Hacs {
+public class  Hacs {
 
 	static Facade theFacade = new Facade();
 
@@ -21,7 +21,7 @@ public class Hacs {
 	public static void main(String[] args) {
 //		String strUsername;
 //		String strUserType = null;
-		UserType userinfoitem = new UserType();
+		UserInfoItem userinfoitem = new UserInfoItem();
 		theFacade.CreateCourseList();
 		while (true) {
 			boolean bExit = false;
@@ -32,7 +32,7 @@ public class Hacs {
 			// userinfoitem.UserType = 1;
 			theFacade.CreateUser(userinfoitem);
 			theFacade.AttachCourseToUser();
-			if (UserType == UserType.USER_TYPE.Student) // if is a student remind him of the due date
+			if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student) // if is a student remind him of the due date
 				theFacade.Remind();
 			boolean bLogout = false;
 			while (!bLogout) {

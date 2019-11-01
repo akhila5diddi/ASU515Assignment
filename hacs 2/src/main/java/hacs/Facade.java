@@ -23,14 +23,13 @@ public class Facade {
 	public Facade() {
 	}
 
-	static public String Login(UserType userinfoItem) {
+	static public boolean Login(UserInfoItem userinfoItem) {
 		Login login = new Login();
 		login.setModal(true);
 		login.show();
-		String strUserName = login.GetUserName();
-		userinfoItem = login.GetUserType();
-		login.isExit();
-		return strUserName;
+		userinfoItem.strUserName = login.GetUserName();
+		userinfoItem.UserType = login.GetUserType();
+		return login.isExit();
 	}
 
 /////////////////////////
@@ -45,13 +44,12 @@ public class Facade {
 
 	void AddAssignment(Course theCourse) {
 		AssignmentMenu theAssignmentMenu;
-		if (thePerson.userType == hacs.UserType.Student)/// student
+		if (thePerson.type == 0)/// student
 		{
 			theAssignmentMenu = new StudentAssignmentMenu();
 		} else {
 			theAssignmentMenu = new InstructorAssignmentMenu();
 		}
-
 		Assignment theAssignment = new Assignment();
 		theAssignmentMenu.ShowMenu(theAssignment, thePerson);
 		theCourse.AddAssignment(theAssignment);
@@ -66,7 +64,7 @@ public class Facade {
 	 */
 	void ViewAssignment(Assignment theAssignment) {
 		AssignmentMenu theAssignmentMenu;
-		if (thePerson.userType == hacs.UserType.Student)/// student
+		if (thePerson.type == 0)/// student
 		{
 			theAssignmentMenu = new StudentAssignmentMenu();
 		} else {
@@ -109,8 +107,8 @@ public class Facade {
 		theReminder.showReminder(thePerson.GetCourseList());
 	}
 
-	void CreateUser(hacs.UserType userinfoitem) {
-		if (userinfoitem == hacs.UserType.Student) /// student
+	void CreateUser(UserInfoItem userinfoitem) {
+		if (userinfoitem.UserType == UserInfoItem.USER_TYPE.Student) /// student
 		{
 			thePerson = new Student();
 		} else /// instructor
@@ -193,7 +191,7 @@ public class Facade {
 	 */
 
 	public boolean CourseOperation() {
-		thePerson.createCourseMenu(theSelecteCourse, nCourseLevel);
+		thePerson.CreateCourseMenu(theSelecteCourse, nCourseLevel);
 		return thePerson.ShowMenu();//// 0: logout 1 select an other course
 	}
 

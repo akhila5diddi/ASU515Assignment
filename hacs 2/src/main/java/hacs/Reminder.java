@@ -41,7 +41,7 @@ public class Reminder extends JDialog {
 		listOverdue.setBounds(new Rectangle(31, 187, 337, 85));
 		buttonOK.setLabel("OK");
 		buttonOK.setBounds(new Rectangle(149, 308, 67, 37));
-		buttonOK.addActionListener(new java.awt.event.ActionListener() {
+		buttonOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonOK_actionPerformed(e);
 			}

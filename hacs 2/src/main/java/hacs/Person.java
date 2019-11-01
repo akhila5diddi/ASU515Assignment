@@ -12,7 +12,7 @@ import java.util.*;
  */
 
 abstract public class Person {
-	UserType userType = UserType.Student;
+	int type = 0; // type=0 : student, type=1 instructor
 	String UserName;
 	ClassCourseList CourseList;
 	CourseMenu theCourseMenu;
@@ -23,7 +23,7 @@ abstract public class Person {
 		CourseList = new ClassCourseList();
 	}
 
-	abstract public CourseMenu createCourseMenu(Course theCourse, CourseMenuEnum levelOfCourse);
+	abstract public CourseMenu CreateCourseMenu(Course theCourse, CourseMenuEnum theLevel);
 
 	public void showAddButton() {
 		theCourseMenu.ShowAddButtons();

@@ -64,7 +64,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     tbSuggestedSolution.setBounds(new Rectangle(197, 149, 339, 22));
     buttonGrade.setText("Grade");
     buttonGrade.setBounds(new Rectangle(458, 199, 79, 29));
-    buttonGrade.addActionListener(new java.awt.event.ActionListener()
+    buttonGrade.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
@@ -73,7 +73,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     });
     buttonReport.setText("Report");
     buttonReport.setBounds(new Rectangle(365, 249, 79, 29));
-    buttonReport.addActionListener(new java.awt.event.ActionListener()
+    buttonReport.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
@@ -82,7 +82,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu
     });
     buttonClose.setText("Close");
     buttonClose.setBounds(new Rectangle(86, 253, 79, 29));
-    buttonClose.addActionListener(new java.awt.event.ActionListener()
+    buttonClose.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {

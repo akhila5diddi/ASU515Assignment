@@ -9,16 +9,15 @@ package hacs;
 
 public class Instructor extends Person {
 	public Instructor() {
-		type = 1;// type=1 :instructor
+		type = 1; //type=1 :instructor
 	}
 
-	@Override
-	public CourseMenu createCourseMenu(Course theCourse, CourseMenuEnum levelOfCourse) {
-		if (levelOfCourse == CourseMenuEnum.HighLevelCourseMenu) {
-			// 0: Highlevel defined in CourseSelectDlg.
+	public CourseMenu CreateCourseMenu(Course theCourse, CourseMenuEnum courseMenu) {
+		if (courseMenu == CourseMenuEnum.HighLevelCourseMenu) {
+			// High-level defined in CourseSelectDlg.
 			theCourseMenu = new HighLevelCourseMenu();
 		} else {
-			// 1: LowLevel
+			// LowLevel
 			theCourseMenu = new LowLevelCourseMenu();
 		}
 		return theCourseMenu;

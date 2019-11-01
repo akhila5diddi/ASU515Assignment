@@ -35,7 +35,7 @@ public class SolutionGradingDlg extends JDialog {
 		tfGrad.setBounds(new Rectangle(25, 66, 100, 22));
 		buttonOK.setText("OK");
 		buttonOK.setBounds(new Rectangle(217, 67, 79, 29));
-		buttonOK.addActionListener(new java.awt.event.ActionListener() {
+		buttonOK.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonOK_actionPerformed(e);
 			}

@@ -66,14 +66,14 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		lGrade.setBounds(new Rectangle(258, 226, 41, 18));
 		bSubmit.setText("Submit");
 		bSubmit.setBounds(new Rectangle(476, 124, 79, 29));
-		bSubmit.addActionListener(new java.awt.event.ActionListener() {
+		bSubmit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bSubmit_actionPerformed(e);
 			}
 		});
 		bCancel.setText("Cancel");
 		bCancel.setBounds(new Rectangle(475, 164, 79, 29));
-		bCancel.addActionListener(new java.awt.event.ActionListener() {
+		bCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				bCancel_actionPerformed(e);
 			}

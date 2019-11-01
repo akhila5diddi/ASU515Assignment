@@ -48,14 +48,14 @@ public class CourseSelectDlg extends JDialog {
 		jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
 		OKButton.setText("OK");
 		OKButton.setBounds(new Rectangle(78, 139, 79, 29));
-		OKButton.addActionListener(new java.awt.event.ActionListener() {
+		OKButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				OKButton_actionPerformed(e);
 			}
 		});
 		buttonLogout.setText("Logout");
 		buttonLogout.setBounds(new Rectangle(224, 140, 73, 31));
-		buttonLogout.addActionListener(new java.awt.event.ActionListener() {
+		buttonLogout.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonLogout_actionPerformed(e);
 			}

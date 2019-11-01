@@ -51,7 +51,7 @@ abstract public class CourseMenu extends JDialog
   {
     buttonChangeCourse.setText("ChangeCourse");
     buttonChangeCourse.setBounds(new Rectangle(101, 211, 73, 37));
-    buttonChangeCourse.addActionListener(new java.awt.event.ActionListener()
+    buttonChangeCourse.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {
@@ -62,7 +62,7 @@ abstract public class CourseMenu extends JDialog
     this.setTitle("");
     buttonLogout.setText("Logout");
     buttonLogout.setBounds(new Rectangle(267, 215, 73, 37));
-    buttonLogout.addActionListener(new java.awt.event.ActionListener()
+    buttonLogout.addActionListener(new ActionListener()
     {
       public void actionPerformed(ActionEvent e)
       {

@@ -15,16 +15,14 @@ public class Student extends Person {
 		type = 0; // type=0: student
 	}
 
-	public CourseMenu createCourseMenu(Course theCourse, CourseMenuEnum levelOfCourse) {
-
-		if (levelOfCourse == CourseMenuEnum.HighLevelCourseMenu) {
-			// 0: Highlevel defined in CourseSelectDlg.
+	public CourseMenu CreateCourseMenu(Course theCourse, CourseMenuEnum courseMenu) {
+		if (courseMenu == CourseMenuEnum.HighLevelCourseMenu) {
+			// High-level defined in CourseSelectDlg.
 			theCourseMenu = new HighLevelCourseMenu();
 		} else {
-			// 1: LowLevel
+			// LowLevel
 			theCourseMenu = new LowLevelCourseMenu();
 		}
-
 		return theCourseMenu;
 	}
 

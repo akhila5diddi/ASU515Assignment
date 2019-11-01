@@ -2,6 +2,8 @@ package hacs;
 
 import javax.swing.*;
 
+import hacs.UserInfoItem.USER_TYPE;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
@@ -31,7 +33,7 @@ public class Login extends JDialog {
 	ButtonGroup buttonGroup1 = new ButtonGroup();
 ////// Attributes Added By me
 	private String UserBox = null;
-	private UserType userType = UserType.Student; // default to Student
+	private USER_TYPE UserType = USER_TYPE.Student; // default to Student
 
 	public Login() {
 		try {
@@ -50,14 +52,14 @@ public class Login extends JDialog {
 		jLabel2.setBounds(new Rectangle(23, 119, 80, 18));
 		loginButton.setText("Login");
 		loginButton.setBounds(new Rectangle(31, 212, 85, 28));
-		loginButton.addActionListener(new java.awt.event.ActionListener() {
+		loginButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				loginButton_actionPerformed(e);
 			}
 		});
 		buttonExit.setText("Exit");
 		buttonExit.setBounds(new Rectangle(180, 211, 97, 28));
-		buttonExit.addActionListener(new java.awt.event.ActionListener() {
+		buttonExit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				buttonExit_actionPerformed(e);
 			}
@@ -88,11 +90,11 @@ public class Login extends JDialog {
 		try {
 			if (StudentRadio.isSelected() == true)//// student
 			{
-				UserType userType = UserType.Student; /// 0 for student
+				UserType = USER_TYPE.Student; /// 0 for student
 				file = new BufferedReader(new FileReader("StuInfo.txt"));
 			} else// instructor
 			{
-				UserType userType = UserType.Instructor; // 1 for instructor
+				UserType = USER_TYPE.Instructor; // 1 for instructor
 				file = new BufferedReader(new FileReader("InsInfor.txt"));
 			}
 			UserBox = UserNameText.getText();
@@ -136,8 +138,8 @@ public class Login extends JDialog {
 	}
 
 	/* after login get the userType of the login interface */
-	public UserType GetUserType() {
-		return userType;
+	public USER_TYPE GetUserType() {
+		return UserType;
 	}
 
 	public boolean isExit() {
