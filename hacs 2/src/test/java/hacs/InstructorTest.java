@@ -1,27 +1,24 @@
 package hacs;
 
+import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class StudentTest {
+public class InstructorTest {
 
     @Test
-    public void testStudent() {
-        Student student = new Student();
-
-        // New student object is created
-        Assert.assertNotNull(student);
-
-        Course lowLevelCourse = new Course("CSE560", 1);
-        Course highLevelCourse = new Course("CSE570", 0);
-
+    public void testInstructor(){
+        Instructor instructor = new Instructor();
+        Assert.assertNotNull(instructor);
+        Course lowLevelCourse = new Course("SER515", 1);
+        Course highLevelCourse = new Course("SER515", 0);
         // Creating high level course
-        CourseMenu highLevelCourseMenu = student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.HighLevelCourseMenu);
+        CourseMenu highLevelCourseMenu = instructor.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.HighLevelCourseMenu);
         Assert.assertNotNull(highLevelCourseMenu);
 
         // Creating low level course
-        CourseMenu lowLevelCourseMenu = student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu);
-        Assert.assertNotNull(student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu));
+        CourseMenu lowLevelCourseMenu = instructor.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu);
+        Assert.assertNotNull(instructor.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu));
 
         // Assert that the course object that is created is a low level course when low level course menu is passed
         LowLevelCourseMenu testLowLevelCourseMenu = (LowLevelCourseMenu) lowLevelCourseMenu;
