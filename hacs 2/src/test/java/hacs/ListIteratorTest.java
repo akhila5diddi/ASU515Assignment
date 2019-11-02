@@ -5,21 +5,26 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+
+/**
+ * @author Akhila Diddi
+ */
+
+
 public class ListIteratorTest {
     @Test
-    public void testListIterator(){
+    public void testListIterator() {
         ArrayList arrayList = new ArrayList();
         ListIterator listIterator = new ListIterator(arrayList);
+        //checks if list iterator is getting created
         Assert.assertNotNull(listIterator);
-
+        //checks if list has next object, since its empty it returns false
         Boolean hasNext = listIterator.hasNext();
-        Assert.assertNotNull(hasNext);
+        Assert.assertFalse(hasNext);
 
-        if(hasNext == Boolean.TRUE){
-            Object next = listIterator.next();
-            Assert.assertNull(next);
-            System.out.println("hi");
-        }
+
+        Object next = listIterator.next();
+        Assert.assertNull(next);
 
 
     }

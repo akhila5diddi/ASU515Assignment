@@ -3,6 +3,12 @@ package hacs;
 import org.junit.Assert;
 import org.junit.Test;
 
+
+/**
+ * @author Akhila Diddi
+ */
+
+
 public class StudentTest {
 
     @Test
@@ -12,16 +18,16 @@ public class StudentTest {
         // New student object is created
         Assert.assertNotNull(student);
 
-        Course lowLevelCourse = new Course("CSE560", 1);
-        Course highLevelCourse = new Course("CSE570", 0);
+        Course lowLevelCourse = new Course("CSE560", CourseMenuEnum.LowLevelCourseMenu);
+        Course highLevelCourse = new Course("CSE570", CourseMenuEnum.HighLevelCourseMenu);
 
         // Creating high level course
-        CourseMenu highLevelCourseMenu = student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.HighLevelCourseMenu);
+        CourseMenu highLevelCourseMenu = student.createCourseMenu(lowLevelCourse, CourseMenuEnum.HighLevelCourseMenu);
         Assert.assertNotNull(highLevelCourseMenu);
 
         // Creating low level course
-        CourseMenu lowLevelCourseMenu = student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu);
-        Assert.assertNotNull(student.CreateCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu));
+        CourseMenu lowLevelCourseMenu = student.createCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu);
+        Assert.assertNotNull(student.createCourseMenu(lowLevelCourse, CourseMenuEnum.LowLevelCourseMenu));
 
         // Assert that the course object that is created is a low level course when low level course menu is passed
         LowLevelCourseMenu testLowLevelCourseMenu = (LowLevelCourseMenu) lowLevelCourseMenu;
